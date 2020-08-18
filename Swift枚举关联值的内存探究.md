@@ -38,7 +38,7 @@ default:
 ```swift
 print(MemoryLayout<Int>.size)// 实际使用内存大小
 print(MemoryLayout<Int>.stride)//分配内存大小
-print(MemoryLayout<Int>.alignment)//内存对其参数
+print(MemoryLayout<Int>.alignment)//内存对齐参数
 
 // 输出 8 8 8 
 ```
@@ -177,7 +177,7 @@ print("内存数据",Mems.memStr(ofVal: &t, alignment: .one))
 
 第25个字节其实完全可以看成一个辨识位，或者说第25个字节就是枚举的本质，通过不同值来区分不同case，只是因为有了关联值，所以开辟了更多的空间来存储而已。
 
-后面多余的字节都是为了内存对齐，内存对其相关的知识大家可以自行上网查阅。
+后面多余的字节都是为了内存对齐，内存对齐相关的知识大家可以自行上网查阅。
 
 补充：
 既然说到了关联值，那就顺便对枚举原始值说两句。具通过你打印带原始值的枚举的内存数据，发现是否带有原始值对枚举的内存占用并无影响，所以原始值应该不是存储在枚举变量的内部的。大家可以自己试验一下
