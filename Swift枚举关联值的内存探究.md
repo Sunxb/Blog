@@ -49,7 +49,7 @@ print(MemoryLayout<Int>.alignment)//内存对其参数
 
 使用swift后，从xcode没法直接打印变量的内存地址，这里我们使用了github上的一个工具类（[github链接](https://github.com/CoderMJLee/Mems)）来帮助我们输出变量的内存地址。
 
-![图1](img/1.png)
+![图1](https://raw.githubusercontent.com/Sunxb/Blog/develop/Img/1.png)
 
 准备工作完成后，我们先从最基础的枚举开始。
 
