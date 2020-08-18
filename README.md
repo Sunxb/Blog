@@ -1,5 +1,8 @@
 ### 2020
 
+#### 8月
+[Swift枚举关联值的内存探究](https://github.com/Sunxb/Blog/blob/develop/Swift枚举关联值的内存探究.md)
+
 #### 3月
 [《图解密码技术》读后总结](https://github.com/Sunxb/Blog/blob/develop/《图解密码技术》读后总结.md)
 
