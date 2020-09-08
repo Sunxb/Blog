@@ -52,7 +52,7 @@ NSLog(@"person2:%@",object_getClass(person2));
 
 首先我们先看一下这面这个图，其实这就是添加了KVO之后类的类型结构
     
-![kvo_1](img/kvo_1.png)
+![kvo_1](img/kvo_1.jpg)
 
 关于NSKVONotifying_Person类实现的方法，我们是怎么样得到的呢，这里我们可以借助runtime的api窥探一下。
     
