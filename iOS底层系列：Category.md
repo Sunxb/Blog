@@ -1,7 +1,7 @@
 
 ## 前言
 
-Category是我们平时用到的比较多的一种技术，比如说给某个类增加方法，"添加"属性，或者用Category优化代码结构。
+Category是我们平时用到的比较多的一种技术，比如说给某个类增加方法，添加成员变量，或者用Category优化代码结构。
 
 我们通过下面这几个问题作为切入点，结合runtime的源码，探究一下Category的底层原理。
 
@@ -9,7 +9,7 @@ Category是我们平时用到的比较多的一种技术，比如说给某个类
 
 ## 探究
 
-### 1. Category为什么能添加方法不能"添加"属性
+### 1. Category为什么能添加方法不能添加成员变量
 
 首先我们先创建一个Person类，然后创建一个Person+Run的Category，并在Person+Run中实现-run方法。
 
@@ -19,7 +19,7 @@ Category是我们平时用到的比较多的一种技术，比如说给某个类
 xcrun -sdk iphonesimulator clang -rewrite-objc Person+Run.m
 ```
 
-得到一个Person+Run.cpp文件，在文件的底布，可以找到这样一个结构体
+得到一个Person+Run.cpp文件，在文件的底部，可以找到这样一个结构体
 
 ```c++
 struct _category_t {
@@ -47,11 +47,21 @@ static struct _category_t _OBJC_$_CATEGORY_Person_$_Run __attribute__ ((used, se
 	0,
 };
 ```
-因为我们的Person+Run里面只有一个实例方法，所以从上述代码中来看，也只有对应的位置传值了。
+因为我们的Person+Run里面只有一个实例方法，从上述代码中来看，也只有对应的位置传值了。
 
-通过这个_category_t的结构结构我们也可以看出，变量存储在_prop_list_t，并不是类中的objc_ivar_list结构体，而且我们都知道property=ivar+set+get，Category中不会生成ivar，所以根本都不能"添加"成员变量。
+通过这个_category_t的结构结构我们也可以看出，属性存储在_prop_list_t，这里并没有类中的objc_ivar_list结构体，所以Category的_category_t结构体中根本没有储存ivar的地方，所以不能添加成员变量。
 
 如果我们在分类中手动为成员变量添加了set和get方法之后，也可以调用，但实际上是没有内存来储值的，这就好像Swift中的计算属性，只起到了计算的作用，就相当于是两个方法（set和get），但是并不能拥有真用的内存来存储值。
+
+举个例子
+
+```
+@property (copy, nonatomic) NSString * name;
+```
+
+下面这个声明如果实在类中，系统会默认帮我们声明一个成员变量_name, 在.h中声明setName和name两个方法，并提供setName和name方法的默认实现。
+
+如果是在Category中，只相当于声明setName和name两个方法，没有实现也没有_name。
 
 
 ### 2. Category的方法是何时合并到类中的
