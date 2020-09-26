@@ -2,6 +2,8 @@
 
 #### 9月
 
+[iOS底层系列：关联对象](https://github.com/Sunxb/Blog/blob/develop/iOS底层系列：关联对象.md)
+
 [iOS底层系列：KVC](https://github.com/Sunxb/Blog/blob/develop/iOS底层系列：KVC.md)
 
 [iOS底层系列：Category](https://github.com/Sunxb/Blog/blob/develop/iOS底层系列：Category.md)
@@ -169,10 +171,4 @@
 
 [CoreLocation实现定位当前城市](https://github.com/Sunxb/Blog/blob/develop/CoreLocation实现定位当前城市.md)
 
-[iOS:tableView的类型改为Grouped组头出现默认的高度](https://github.com/Sunxb/Blog/blob/develop/iOS-tableView的类型改为Grouped组头出现默认的高度.md)
-
-[iOS报错:Library not found -lPods-AFNetworking](https://github.com/Sunxb/Blog/blob/develop/iOS报错-Library%20not%20found%20-lPods-AFNetworking.md)
-
-#### 4月
-[一个有关tableViewCell的复用问题](https://github.com/Sunxb/Blog/blob/develop/一个有关tableViewCell的复用问题.md)
 
