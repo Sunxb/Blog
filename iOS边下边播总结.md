@@ -10,7 +10,7 @@
 
  具体的`AVAssetResourceLoader`实现原理网上可以找到很多逻辑图, 如下图(来自网络)所示.
  
- ![image-1](./Img/2021/12/10-1.png)
+ ![image-1](./Img/2021:12:10-1.png)
 
  这里结合我们的实际代码简单的介绍一个这个图片.
 
@@ -48,7 +48,7 @@ func resourceLoader(_ resourceLoader: AVAssetResourceLoader, didCancel loadingRe
 当播放器开始播放的时候, 会通过`shouldWaitForLoadingOfRequestedResource`这个回调方法向我们索要数据, 具体所要数据的信息细节都封装在`loadingRequest`里面. 
 因为这个回调会走很多次, 上图中表示的是要保存起来每一次的loadingRequest, 但在实际项目中, 我使用了不太一样的策略, 我把每一次loadingRequest都对应一个worker对象来处理, 这样每次索要数据, 都有一个单独的worker来处理相对应的网络请求(暂不考虑缓存), 这样比较条理. 同时我们也需要保存起我们的worker, 因为如果播放器需要支持进度条拖动时, 需要手动seek到某一个位置, 这样会触发`didCancel`这个回调, 所以我们也需要把我们对应的worker内部停掉.
 
- ![image-2](./Img/2021/12/10-2.png)
+ ![image-2](./Img/2021:12:10-2.png)
 
 ### 回调处理
 
