@@ -1,6 +1,11 @@
 ### 2022
 
+#### 6月
+
+[理解 Swift 中的 @inlinable （译）](https://github.com/Sunxb/Blog/blob/develop/理解%20Swift%20中的%20%40inlinable%20(译).md)
+
 #### 5月
+
 [互斥锁和信号量有什么不同？（译）](https://github.com/Sunxb/Blog/blob/develop/互斥锁和信号量有什么不同？（译）.md)
 
 ### 2021
