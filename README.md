@@ -2,7 +2,9 @@
 
 #### 6月
 
-[Swift 5.7 中的 any 和 some (译).md](https://github.com/Sunxb/Blog/blob/develop/Swift%205.7%20中的%20any%20和%20some%20(译).md)
+[Swift Talk：理解值类型](https://github.com/Sunxb/Blog/blob/develop/Swift%20Talk：理解值类型.md)
+
+[Swift 5.7 中的 any 和 some (译)](https://github.com/Sunxb/Blog/blob/develop/Swift%205.7%20中的%20any%20和%20some%20(译).md)
 
 [理解 Swift 中的 @inlinable （译）](https://github.com/Sunxb/Blog/blob/develop/理解%20Swift%20中的%20%40inlinable%20(译).md)
 
